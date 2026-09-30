@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {{ app_name }} | Learning Assistant
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+<main class="shell">
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="badge">
+            AI LEARNING ASSISTANT
+        </div>
+
+        <h1>
+            Edu<span>Genie</span>
+        </h1>
+
+        <p>
+            Ask, understand, practice,
+            summarize, and plan your
+            learning journey.
+        </p>
+
+    </header>
+
+
+    <!-- MAIN CARD -->
+
+    <section class="card">
+
+
+        <!-- TASK BUTTONS -->
+
+        <div
+            class="task-grid"
+            id="taskGrid"
+        >
+
+            <button
+                class="task active"
+                data-task="qa"
+            >
+                💬 Ask a Question
+            </button>
+
+
+            <button
+                class="task"
+                data-task="explain"
+            >
+                💡 Explain a Topic
+            </button>
+
+
+            <button
+                class="task"
+                data-task="quiz"
+            >
+                📝 Generate Quiz
+            </button>
+
+
+            <button
+                class="task"
+                data-task="summarize"
+            >
+                📚 Summarize
+            </button>
+
+
+            <button
+                class="task"
+                data-task="learn"
+            >
+                🧭 Learning Path
+            </button>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form id="assistantForm">
+
+
+            <label
+                id="inputLabel"
+                for="userInput"
+            >
+                What would you like to know?
+            </label>
+
+
+            <textarea
+                id="userInput"
+                required
+                placeholder="Example: Which is the largest ocean?"
+            ></textarea>
+
+
+            <!-- OPTIONS -->
+
+            <div class="options">
+
+
+                <!-- LEVEL -->
+
+                <label
+                    id="levelWrap"
+                    class="hidden"
+                >
+
+                    Level
+
+                    <select id="level">
+
+                        <option value="beginner">
+                            Beginner
+                        </option>
+
+                        <option value="intermediate">
+                            Intermediate
+                        </option>
+
+                        <option value="advanced">
+                            Advanced
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- QUIZ COUNT -->
+
+                <label
+                    id="countWrap"
+                    class="hidden"
+                >
+
+                    Questions
+
+                    <select id="questionCount">
+
+                        <option
+                            value="3"
+                            selected
+                        >
+                            3
+                        </option>
+
+                        <option value="5">
+                            5
+                        </option>
+
+                        <option value="10">
+                            10
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- TIMELINE -->
+
+                <label
+                    id="timelineWrap"
+                    class="hidden"
+                >
+
+                    Timeline
+
+                    <input
+                        id="timeline"
+                        value="6 weeks"
+                        maxlength="100"
+                    >
+
+                </label>
+
+
+                <!-- SUMMARY WORDS -->
+
+                <label
+                    id="wordsWrap"
+                    class="hidden"
+                >
+
+                    Max words
+
+                    <select id="maxWords">
+
+                        <option value="80">
+                            80
+                        </option>
+
+                        <option
+                            value="120"
+                            selected
+                        >
+                            120
+                        </option>
+
+                        <option value="200">
+                            200
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                class="submit"
+                type="submit"
+                id="submitBtn"
+            >
+                ✨ Generate Answer
+            </button>
+
+
+        </form>
+
+
+        <!-- RESULT -->
+
+        <section
+            class="result-wrap hidden"
+            id="resultWrap"
+        >
+
+
+            <div class="result-heading">
+
+                <h2 id="resultTitle">
+                    Result
+                </h2>
+
+                <button
+                    class="copy"
+                    id="copyBtn"
+                    type="button"
+                >
+                    Copy
+                </button>
+
+            </div>
+
+
+            <div id="result"></div>
+
+
+        </section>
+
+
+        <!-- ERROR -->
+
+        <div
+            class="error hidden"
+            id="error"
+        ></div>
+
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <span>EduGenie</span>
+        · FastAPI + Google Gemini
+
+    </footer>
+
+
+</main>
+
+
+<script
+    src="{{ url_for('static', path='app.js') }}"
+></script>
+
+</body>
+
+</html>
