@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduGenie - AI Learning Assistant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>EduGenie</h1>
+    <p>Google Gemini Powered Learning Assistant</p>
+</header>
+
+<main>
+
+    <section class="input-section">
+
+        <h2>Learn Smarter with EduGenie</h2>
+
+        <textarea
+            id="topic"
+            placeholder="Enter a topic or learning content..."
+        ></textarea>
+
+        <div class="buttons">
+
+            <button onclick="generateContent('explain')">
+                Explain
+            </button>
+
+            <button onclick="generateContent('summarize')">
+                Summarize
+            </button>
+
+            <button onclick="generateContent('quiz')">
+                Quiz
+            </button>
+
+            <button onclick="generateContent('questions')">
+                Questions
+            </button>
+
+            <button onclick="generateContent('learning-path')">
+                Learning Path
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="result-section">
+
+        <h2>Result</h2>
+
+        <div id="loading" class="hidden">
+            Generating your learning content...
+        </div>
+
+        <div id="result">
+            Enter a topic and select a feature to begin.
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>EduGenie © 2026</p>
+</footer>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
